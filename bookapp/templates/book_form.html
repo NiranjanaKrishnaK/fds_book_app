@@ -1,0 +1,8 @@
+<h2>{% if book %}Edit{% else %}Add{% endif %} Book</h2>
+<form method="post">{% csrf_token %}
+  Title: <input type="text" name="title" value="{{ book.title|default:'' }}"><br>
+  Author: <input type="text" name="author" value="{{ book.author|default:'' }}"><br>
+  Genre: <input type="text" name="genre" value="{{ book.genre|default:'' }}"><br>
+  Rating: <input type="number" name="rating" value="{{ book.rating|default:'' }}"><br>
+  <button type="submit">Save</button>
+</form>
